@@ -1,0 +1,36 @@
+{
+    "name": "Wifi Login by Sequraa",
+    "description": "This extension auto login in wifi login page with saved credentials.",
+    "manifest_version": 3,
+    "version": "0.0.1.1",
+    "icons": {
+        "16": "icon.png",
+        "48": "icon.png",
+        "128": "icon.png"
+    },
+    "content_scripts": [
+        {
+            "run_at": "document_end",
+            "matches": ["https://192.168.1.250/*"],
+            "js": ["content.js"]
+        }
+    ],
+    "permissions": [
+        "activeTab",
+        "storage",
+        "tabs",
+        "scripting"
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "icon.png",
+            "48": "icon.png",
+            "128": "icon.png"
+        }
+    },
+    "background": {
+        "service_worker": "background.js"
+    }
+    
+}
